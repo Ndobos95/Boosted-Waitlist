@@ -4,10 +4,9 @@ import { supabaseAdmin } from '@/lib/supabase'
 export async function GET() {
   try {
     // Get total signups
-    const { data: totalData, error: totalError } = await supabaseAdmin
+    const { count: totalSignups, error: totalError } = await supabaseAdmin
       .from('waitlist')
-      .select('count(*)')
-      .single()
+      .select('*', { count: 'exact', head: true })
 
     if (totalError) {
       console.error('Total count error:', totalError)
@@ -47,7 +46,7 @@ export async function GET() {
     const emailsNotSent = emailStats.length - emailsSent
 
     return NextResponse.json({
-      totalSignups: totalData.count,
+      totalSignups: totalSignups || 0,
       dailySignups,
       emailStats: {
         sent: emailsSent,

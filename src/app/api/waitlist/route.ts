@@ -132,17 +132,16 @@ export async function POST(request: NextRequest) {
 // GET endpoint for analytics (optional)
 export async function GET() {
   try {
-    const { data, error } = await supabaseAdmin
+    const { count, error } = await supabaseAdmin
       .from('waitlist')
-      .select('count(*)')
-      .single()
+      .select('*', { count: 'exact', head: true })
 
     if (error) {
       console.error('Analytics error:', error)
       return NextResponse.json({ error: 'Failed to get stats' }, { status: 500 })
     }
 
-    return NextResponse.json({ totalSignups: data.count })
+    return NextResponse.json({ totalSignups: count || 0 })
   } catch (error) {
     console.error('Analytics error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
