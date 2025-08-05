@@ -32,6 +32,9 @@ ENV NEXT_PUBLIC_GOOGLE_ANALYTICS=$NEXT_PUBLIC_GOOGLE_ANALYTICS
 # Build the application
 RUN npm run build
 
+# Ensure public directory exists
+RUN mkdir -p /app/public
+
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
