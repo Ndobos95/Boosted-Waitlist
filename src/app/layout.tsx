@@ -32,6 +32,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Meta tags for social media */}
+        <meta property="og:title" content="Boosted - Supercharge Your Band Booster Fundraising" />
+        <meta property="og:description" content="The all-in-one platform designed specifically for band boosters to streamline fundraising, simplify payment collection, and enhance parent-student communication." />
+        <meta property="og:url" content="https://boosted.band" />
+        <meta property="og:site_name" content="Boosted" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Boosted - Supercharge Your Band Booster Fundraising" />
+        <meta name="twitter:description" content="The all-in-one platform designed specifically for band boosters to streamline fundraising, simplify payment collection, and enhance parent-student communication." />
+        
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
           <>
