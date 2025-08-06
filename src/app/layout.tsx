@@ -9,6 +9,19 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Boosted - Band Booster Software Coming Soon",
   description: "Revolutionary software for band boosters to streamline fundraising, collect payments, and enhance communication. Join our waitlist for early access.",
+  openGraph: {
+    title: "Boosted - Supercharge Your Band Booster Fundraising",
+    description: "The all-in-one platform designed specifically for band boosters to streamline fundraising, simplify payment collection, and enhance parent-student communication.",
+    url: "https://boosted.band",
+    siteName: "Boosted",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Boosted - Supercharge Your Band Booster Fundraising",
+    description: "The all-in-one platform designed specifically for band boosters to streamline fundraising, simplify payment collection, and enhance parent-student communication.",
+  },
 };
 
 export default function RootLayout({
