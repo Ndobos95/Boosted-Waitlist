@@ -129,10 +129,6 @@ export default function Home() {
                         {/* Social Proof */}
                         <div className="flex items-center justify-center gap-8 text-sm text-gray-500">
                             <div className="flex items-center gap-2">
-                                <Users className="h-4 w-4" />
-                                <span>500+ Interested Parents</span>
-                            </div>
-                            <div className="flex items-center gap-2">
                                 <Target className="h-4 w-4" />
                                 <span>Built for Band Boosters</span>
                             </div>
